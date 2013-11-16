@@ -34,4 +34,7 @@ CookieMonster::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
 end
+
+  ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6389'
