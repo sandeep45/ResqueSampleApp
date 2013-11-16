@@ -27,7 +27,9 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection
 
   if defined?(Resque)
-    Resque.redis = ENV['REDIS_URI']
+    puts "SANDEEP in unicorn.rb after_fork using resque url #{ENV["REDISTOGO_URL"]}"
+    uri = URI.parse(ENV["REDISTOGO_URL"])
+    Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password, :thread_safe => true)
     Rails.logger.info('Connected to Redis')
   end
 end

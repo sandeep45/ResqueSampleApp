@@ -1,7 +1,9 @@
 module Eat
   @queue = :food
 
-  def perform(food)
-    puts "Ate #{food}!"
+  def self.perform(food)
+    puts "Starting to eat #{food}!"
+    sleep 2
+    puts "Finished eating eat #{food}!"
   end
 end

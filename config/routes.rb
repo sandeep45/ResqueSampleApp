@@ -1,6 +1,22 @@
+class Sandeep2
+  def self.matches?(request)
+    return true if request.query_string.index "SANDEEP2"
+  end
+end
+
 CookieMonster::Application.routes.draw do
 
   match 'eat/:food' => 'eat#food'
+
+  mount Resque::Server, :at => "/resque"
+
+  constraints Sandeep do
+    match 'hw' => 'eat#hw'
+  end
+
+  constraints Sandeep2 do
+    match 'hw2' => 'eat#hw'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

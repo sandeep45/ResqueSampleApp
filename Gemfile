@@ -15,7 +15,9 @@ gem "rack-timeout"
 
 gem 'redis'
 
-gem 'resque'
+gem 'resque', :require => 'resque/server'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Gems used only for assets and not required
 # in production environments by default.
