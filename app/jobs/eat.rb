@@ -3,7 +3,10 @@ module Eat
 
   def self.perform(food)
     puts "Starting to eat #{food}!"
-    sleep 2
+    (1..10).each do |i|
+      puts "."*i
+      sleep 1
+    end
     Food.create(:name => food)
     puts "Finished eating eat #{food}!"
   end
