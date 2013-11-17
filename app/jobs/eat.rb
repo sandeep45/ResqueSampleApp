@@ -5,7 +5,7 @@ module Eat
 
   def self.perform(food)
     puts "Starting to eat #{food}!"
-    (1..10).each do |i|
+    (1..4).each do |i|
       puts "."*i
       sleep 1
     end

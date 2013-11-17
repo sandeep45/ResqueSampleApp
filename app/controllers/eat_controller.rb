@@ -3,8 +3,7 @@ require 'csv'
 class EatController < ApplicationController
   def food
     Resque.enqueue(Eat, params[:food])
-    sleep 5
-    render :text => "Put  in fridge to eat later."
+    render :text => "Put  in fridge to eat later.\n"
   end
 
   def hw
