@@ -18,6 +18,8 @@ CookieMonster::Application.routes.draw do
     match 'hw2' => 'eat#hw'
   end
 
+  match '/export' => 'eat#export'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

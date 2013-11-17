@@ -17,7 +17,7 @@ gem 'redis'
 
 gem 'resque', :require => 'resque/server'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :groups => [:development]
 
 # Gems used only for assets and not required
 # in production environments by default.

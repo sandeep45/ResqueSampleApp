@@ -1,3 +1,5 @@
+require 'csv'
+
 class EatController < ApplicationController
   def food
     Resque.enqueue(Eat, params[:food])
@@ -7,5 +9,10 @@ class EatController < ApplicationController
 
   def hw
     render :text => "Hello World", :status => 200
+  end
+
+  def export
+    Resque.enqueue(CreateExportFile)
+    render :text => "We have added your request to create the file. Thanks!"
   end
 end
