@@ -3,3 +3,18 @@
 This app uses Resque (w/Redis), unicorn (w/multiple child processes), rails and
 works on Heroku!
 
+I also have aws included.
+
+AWS.config({
+  :access_key_id => ENV['ACCESS_KEY_ID'],
+  :secret_access_key => ENV['SECRET_ACCESS_KEY']
+})
+
+s3 = AWS::S3.new
+
+s3.buckets.each { |x| puts x.name }
+  cookie_monster_dev
+  fk_dev
+  sandeep45_dev
+  sandeep45_expirement
+  sandeep45_prod
