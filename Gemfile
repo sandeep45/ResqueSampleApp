@@ -17,6 +17,8 @@ gem 'redis'
 
 gem 'resque', :require => 'resque/server'
 
+gem 'resque-scheduler', :require => 'resque_scheduler'
+
 gem 'dotenv-rails', :groups => [:development]
 
 gem 'paperclip'
